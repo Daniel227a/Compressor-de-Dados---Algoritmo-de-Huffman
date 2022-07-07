@@ -1,0 +1,36 @@
+14
+9
+5
+4
+5
+2
+3
+1518= total 
+735 total 
+sobra=183
+
+ conta_letras()
+ frequencia(textos)
+frequencia_para_no(lista_de_frequencias, 0)
+sort(lista_de_nos)
+soma_menor(lista_de_nos)
+gera_binario4(teste,None)
+
+
+byteorder : O argumento byteorder determina a ordem de byte usada para representar o inteiro. Se byteorder for 'big',
+o byte mais significativo estará no início da matriz de bytes. Se byteorder for 'little', o byte mais significativo estará no 
+final da matriz de bytes. 
+Para solicitar a ordem de byte nativa do sistema host, use 'sys.byteorder' como o valor da ordem de byt
+
+
+texto1=(413 bytes)
+texto2=(738 bytes)
+texto3=(1.124 bytes)
+texto4=(1.502 bytes)
+texto5= (1.736 bytes)
+
+
+
+ ('l', [0, 1, 1, 1])=[0, 1, 1, 1,
+('r', [1, 1, 1, 1, 0])=1, 1, 1, 1, 1, 0
+0, 1, 0, 1,  =('t', [0, 1, 0, 1])

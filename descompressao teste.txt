@@ -1,0 +1,140 @@
+def descompressão(vet4):
+
+    cont = 0
+    temp = ''
+    vet_int = []
+    vet_int2 = []
+    x = io.open("zip.dv2", mode="r+b", )
+    for i in range(len(x)):
+        #print(byte_int(i))
+        #print('-')
+        t = byte_int(i)
+        vet_int.append(t)
+
+    # print(vet_int)
+    for i in vet_int:
+        # print(bin(i))
+        temp += str(bin(i))
+
+    #  print((temp))
+    k = []
+    k2 = []
+    texto = ""
+    for i in temp:
+        if i != 'b':
+            k.append(list(map(int, i)))
+
+    for i in range(len(k)):
+        # print((k[i][0]))
+        k2.append(k[i][0])
+    print(k2)
+    return k2
+    """for i in range(len(k2)):#lista de todos os binarios
+        for j in range(len(vet4)):#vetor com frequencias 
+
+            ve = (vet4[j][1])#ve == a um vetor que coresponde a uma letra
+            f=len(ve)
+            c=(k2[i:f])
+            y=(ve[:])
+            for p in range (len(c)):
+               if(c[p]==y[p]):
+                   cont+=1
+               else:
+                   cont=0
+               if cont==f:
+
+                    texto += vet4[j][0]
+
+
+    print(texto)
+    """
+
+
+def descompressão2(vet4):
+    #print(vet4)
+    cont = 0
+    temp = ''
+    vet_int = []
+    vet_int2 = []
+    x = io.open("zip.dv2", mode="rb", )
+    for i in x:
+
+        for k in i:
+
+            # print(k)
+            # print((bin(k)).encode())
+
+            bits = bin(k)[2:].rjust(8, '0')
+
+            for b in (bits):  # ler bit a bit do texto
+                for j in range(len(vet4)):  # vetor com frequencias
+                    ve = (vet4[j][1])
+                    for te in ((ve)):
+
+                        if b == te:
+                            cont += 1
+                        # print(cont)
+
+                        else:
+                            cont = 0
+
+                        if cont == (len(ve)):
+                            print(vet4[j][0])
+
+
+def decode(vet4,input):
+    output = ''
+    curr_code = ''
+    temp=''
+    :
+        curr_code += ele
+        for j in range(len(vet4)):
+            for i in vet4[j][1]:
+                temp+=str(i)
+            #print(temp)
+            if curr_code in temp:
+                output +=str(vet4[j][0])
+                print(temp)
+                curr_code = ''
+            temp=''
+    return output
+
+def removePadding(input):
+    pad_info = input[:8]
+    input = input[8:]
+    pad_info = int(pad_info, 2)
+    input = input[:-1 * pad_info]
+
+    return input
+
+    # Method to decode the text
+
+
+
+
+
+def decompres(nova):
+
+    output_path = '2.txt'
+    with open('zip.dv2', 'rb') as file, open(output_path, 'w') as output:
+        bit_string = ''
+        byte = file.read(1)
+        while byte:
+            byte = ord(byte)
+            bits = bin(byte)[2:].rjust(8, '0')
+            bit_string += bits
+            byte = file.read(1)
+        bit_string = removePadding(bit_string)
+        decoded_text = decode(vet4,bit_string)
+
+        output.write(decoded_text)
+    print('Decompressed')
+    return output_path
+
+
+
+dicionario[str(vet4[j][0])]=temp
+
+
+0b1111111		0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0
+0b10010101		0,1,1,1,1,1,1
